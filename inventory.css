@@ -1,0 +1,30 @@
+.navbar {
+    display: flex;
+    background-color: rgb(167, 166, 166);
+    height: 50px;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    list-style: none;
+}
+
+li a{
+    padding: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.add-button {
+    display: flex;
+    border-radius: 100px;
+}
+
+.input-containers {
+    display: flex;
+    background-color: grey;
+    border: 1px solid black;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+}
