@@ -1,17 +1,43 @@
 .navbar {
-    display: flex;
-    background-color: rgb(167, 166, 166);
-    height: 50px;
-    align-items: center;
-    justify-content: flex-start;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    list-style: none;
-}
-
-li a{
-    padding: 20px;
-    text-decoration: none;
-    color: black;
+    html, body{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: rgb(222, 243, 255);
+    }
+    
+    body{
+        display: flex;
+    }
+    
+    .navbar{
+        display: flex;
+        width: 100%;
+        height: 75px;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    li a{
+        display: flex;
+        color: cornflowerblue;
+        text-decoration: none;
+        align-items: center;
+        font-family: 'Times New Roman', Times, serif;
+        padding: 23px 20px;
+    }
+    
+    ul{
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        font-size: 1.1rem;
+    }
+    
+    a:hover{
+        border-bottom: 1px solid cornflowerblue;
+    }
 }
 
 .add-button {
@@ -19,12 +45,10 @@ li a{
     border-radius: 100px;
 }
 
-.input-containers {
-    display: flex;
-    background-color: grey;
-    border: 1px solid black;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    height: 300px;
+.input-containers{
+    display: none;
+}
+
+.new-inv{
+    display: none;
 }

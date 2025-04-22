@@ -8,16 +8,30 @@
 </head>
 <body>
     <div class="navbar">
-        <li><a href="">Home</a></li>
-        <li><a href="">Inventory</a></li>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Inventory</a></li>
+        </ul>
     </div>
-    <div class="add-button"><button>+</button></div>
-    <div class="input-containers" style="display:none">
+
+    <div class="intro">
+        <h1>Inventory Keeper</h1>
+        <button type="button" class="inv-btn" id="btn" onclick="show()" return false; >Create Inventory</button>
+    </div>
+
+    <div id="add-button" onclick="show2()"><button>+</button></div>
+    <div class="input-containers" id="container">
         <div class="item-name"><input type="text" id="input-container" name="name" placeholder="Name"></div>
         <div class="item-category"><input type="text" id="input-container" name="name" placeholder="Category"></div>
         <div class="item-descrip"><input type="text" id="input-container" name="name" placeholder="Description"></div>
         <div class="item-amt"><input type="text" id="input-container" name="name" placeholder="Quantity"></div>
         <div class="item-image"><input type="image" id="input-container" name="name" placeholder="Image"></div>
     </div>
+    <div class="new-inv" id="new-inv">
+        <div class="inv-new"><input type="text" id="input-container" name="name" placeholder="Title"></div>
+        <div class="inv-new"><input type="text" id="input-container" name="name" placeholder="Description"></div>
+    </div>
+
+    <script> src="inventory.js"</script>
 </body>
 </html>
