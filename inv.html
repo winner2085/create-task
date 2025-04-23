@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Inventories</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="inv.html">Inventory</a></li>
+        </ul>
+    </div class="createdInv" id="createdInv">
+    <div id="invTitle"></div>
+    <div id="add-button" onclick="addItem()"><button>Add Item</button></div>
+    <div class="input-containers" id="container">
+        <div class="item-name"><input type="text" id="input-container" name="name" placeholder="Name"></div>
+        <div class="item-category"><input type="text" id="input-container" name="name" placeholder="Category"></div>
+        <div class="item-descrip"><input type="text" id="input-container" name="name" placeholder="Description"></div>
+        <div class="item-amt"><input type="text" id="input-container" name="name" placeholder="Quantity"></div>
+        <div class="item-image"><input type="image" id="input-container" name="name" placeholder="Image"></div>
+    </div>
+    <script src="inv.js" defer></script>
+</body>
+</html>

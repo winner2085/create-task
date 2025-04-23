@@ -4,34 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory</title>
-    <link rel="stylesheet" href="inventory.css">
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
     <div class="navbar">
         <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Inventory</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="inv.html">Inventories</a></li>
         </ul>
     </div>
 
     <div class="intro">
         <h1>Inventory Keeper</h1>
-        <button type="button" class="inv-btn" id="btn" onclick="show()" return false; >Create Inventory</button>
+        <button type="button" class="btn" id="btn" onclick="CreateInv()" return false; >Create Inventory</button>
     </div>
 
-    <div id="add-button" onclick="show2()"><button>+</button></div>
-    <div class="input-containers" id="container">
-        <div class="item-name"><input type="text" id="input-container" name="name" placeholder="Name"></div>
-        <div class="item-category"><input type="text" id="input-container" name="name" placeholder="Category"></div>
-        <div class="item-descrip"><input type="text" id="input-container" name="name" placeholder="Description"></div>
-        <div class="item-amt"><input type="text" id="input-container" name="name" placeholder="Quantity"></div>
-        <div class="item-image"><input type="image" id="input-container" name="name" placeholder="Image"></div>
-    </div>
     <div class="new-inv" id="new-inv">
-        <div class="inv-new"><input type="text" id="input-container" name="name" placeholder="Title"></div>
-        <div class="inv-new"><input type="text" id="input-container" name="name" placeholder="Description"></div>
+        <div class="inv-new"><input type="text" class="input" id="input-title" name="name" placeholder="Title"></div>
+        <div class="inv-new"><input type="text" class="input" id="input-desc" name="name" placeholder="Description"></div>
+        <button type="button" class="button" id="closeBtn" onclick="storeUserInput()">Done</button>
     </div>
 
-    <script> src="inventory.js"</script>
+    <script src="home.js"></script>
 </body>
 </html>
