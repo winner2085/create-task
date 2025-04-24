@@ -1,3 +1,4 @@
+
 //Creates buttons to add new inventory folders and items
 const newInv = document.querySelector("#btn");
 
@@ -15,18 +16,27 @@ const closeBtn = document.getElementById("closeBtn");
 
 function storeUserInput(inputTitle, inputDesc){
     closeBtn.addEventListener('click', () => {
-        localStorage.setItem("User Input", inputTitle, inputDesc)
+        const userInput = {
+            title: inputTitle,
+            description: inputDesc
+        }
+        console.log(userInput)
+        localStorage.setItem("UserInput", JSON.stringify(userInput));
         window.location.href = "inv.html";
     });
 }
 storeUserInput(inputTitle, inputDesc);
 
-if (inputTitle, inputDesc){
-    document.getElementById("invTitle").textContent = inputTitle;
-    document.getElementById("invTitle").textContent = inputTitle;
+const storedInput = localStorage.getItem("UserInput");
+
+if (storedInput){
+    const userInput = JSON.parse(storedInput);
+
+    document.getElementById("invTitle").textContent = userInput.title;
+    document.getElementById("invDesc").textContent = userInput.description;
 }
 
-const addButton = document.querySelector("#add-button");
+const addButton = document.getElementById("add-button");
 
 //When button is clicked, it creates a new item to personalize
 function addItem() {
