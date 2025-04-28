@@ -3,10 +3,11 @@ let pageTitle1 = "Home Page";
 let pageTitle2 = "Your Inventories";
 
 //Creates buttons to add new inventory folders and items
-const newInvBtn = document.getElementById("btn");
+
 
 //When button is clicked, it creates a new inventory folder to personalize
-function createInv(newInvBtn) {
+function createInv() {
+    const newInvBtn = document.getElementById("btn");
     newInvBtn.addEventListener('click', () => {
         document.getElementById("new-inv").style.display = "block";
     });
@@ -47,12 +48,11 @@ function addItem() {
     addButton.addEventListener('click', () => {
         document.getElementById("container").style.display = "block";
     });
-}   
-addItem();
+}
 
 //Checks which page the user is on and executes the corresponding function
 if(pageTitle1 === "Home Page"){
-    createInv(newInvBtn);
+    createInv();
     storeUserInput(inputTitle, inputDesc);
 
 } else if (pageTitle2 === "Your Inventories") {
