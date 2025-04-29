@@ -13,17 +13,18 @@ function createInv() {
     });
 }
 
+document.addEventListener('DOMContentLoaded', () => {
 //Defines the input fields for the inventory title and description
-let inputTitle = document.getElementById("inTit").value;
-let inputDesc = document.getElementById("inDesc").value;
+const inputTitle = document.getElementById("inTit");
+const inputDesc = document.getElementById("inDesc");
 const closeBtn = document.getElementById("closeBtn");
 
 //Locally stores the user input and redirects to the inventory page
 function storeUserInput(inputTitle, inputDesc){
     closeBtn.addEventListener('click', () => {
         const userInput = {
-            title: inputTitle,
-            description: inputDesc
+            title: inputTitle.value,
+            description: inputDesc.value
         }
         console.log(userInput)
         localStorage.setItem("UserInput", JSON.stringify(userInput));
@@ -35,11 +36,13 @@ function storeUserInput(inputTitle, inputDesc){
 const storedInput = localStorage.getItem("UserInput");
 console.log(storedInput);
 if (storedInput){
-    const userInput = JSON.parse(storedInput);
+    console.log(inputUser);
+    const inputUser = JSON.parse(storedInput);
 
-    document.getElementById("inTit").textContent = userInput.title;
-    document.getElementById("inDesc").textContent = userInput.description;
+    document.getElementById("inTit").textContent = inputUser.title;
+    document.getElementById("inDesc").textContent = inputUser.description;
 }
+});
 
 //Defines the button to add items to the inventory
 const addButton = document.getElementById("add-button");
