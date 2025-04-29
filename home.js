@@ -33,11 +33,12 @@ function storeUserInput(inputTitle, inputDesc){
 
 //Retrieves the stored user input and displays it on the inventory page
 const storedInput = localStorage.getItem("UserInput");
+console.log(storedInput);
 if (storedInput){
     const userInput = JSON.parse(storedInput);
 
-    document.getElementById("invTitle").textContent = userInput.title;
-    document.getElementById("invDesc").textContent = userInput.description;
+    document.getElementById("inTit").textContent = userInput.title;
+    document.getElementById("inDesc").textContent = userInput.description;
 }
 
 //Defines the button to add items to the inventory
@@ -54,7 +55,6 @@ function addItem() {
 if(pageTitle1 === "Home Page"){
     createInv();
     storeUserInput(inputTitle, inputDesc);
-
 } else if (pageTitle2 === "Your Inventories") {
     addItem();
 }
