@@ -4,25 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" href="home.css">
+    
 </head>
-<body data-page="page1">
-    <div class="navbar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="inv.html">Inventories</a></li>
-        </ul>
+    <div><h1>Inventory Keeper</h1></div>
+
+    <div>
+        <input type="text" id="item_name" placeholder="Name">
+        <input type="text" id="item_color" placeholder="Color">
+        <input type="number" id="item_size" placeholder="Size">
+        <input type="number" id="item_quantity" placeholder="Quantity">
+        <button type="button" onclick="addItem()">Add Item</button>
     </div>
 
-    <div class="intro">
-        <h1>Inventory Keeper</h1>
-        <button type="button" class="btn" id="btn" onclick="createInv()" return false;> Create Inventory </button>
-    </div>
-
-    <div class="new-inv" id="new-inv">
-        <div class="inv-new"><input type="text" class="input" id="inTit" name="name" placeholder="Title"></div>
-        <div class="inv-new"><input type="text" class="input" id="inDesc" name="name" placeholder="Description"></div>
-        <button type="button" class="button" id="closeBtn" onclick="storeUserInput()">Done</button>
+    <div>
+        <h2>Inventory</h2>
+        <div>
+            <button type="button" onclick="SortList('name')">Sort By Name</button>
+            <button type="button" onclick="SortList('color')">Sort By Color</button>
+            <button type="button" onclick="SortList('size')">Sort By Size</button>
+            <button type="button" onclick="SortList('quantity')">Sort By Quantity</button>
+        </div>
+        <div>
+            <table id="user_inventory"></table>
+        </div>
     </div>
 
     <script src="home.js"></script>

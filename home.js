@@ -1,63 +1,77 @@
-//Defines the page titles
-let pageTitle1 = "Home Page";
-let pageTitle2 = "Your Inventories";
+const inventory = [];
 
-//Creates buttons to add new inventory folders and items
+const inventoryTable = document.getElementById("user-inventory");
 
-
-//When button is clicked, it creates a new inventory folder to personalize
-function createInv() {
-    const newInvBtn = document.getElementById("btn");
-    newInvBtn.addEventListener('click', () => {
-        document.getElementById("new-inv").style.display = "block";
-    });
+function addRow(itemObject) {
+    const newRow = inventoryTable.insertRow();
+    const nameCell = newRow.insertCell();
+    const colorCell = newRow.insertCell();
+    const sizeCell = newRow.insertCell();
+    const quantityCell = newRow.insertCell();
+    
+    nameCell.textContent = itemObject.name;
+    colorCell.textContent = itemObject.quantity;
+    sizeCell.textContent = itemObject.name;
+    quantityCell.textContent = itemObject.quantity;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-//Defines the input fields for the inventory title and description
-const inputTitle = document.getElementById("inTit");
-const inputDesc = document.getElementById("inDesc");
-const closeBtn = document.getElementById("closeBtn");
-
-//Locally stores the user input and redirects to the inventory page
-function storeUserInput(inputTitle, inputDesc){
-    closeBtn.addEventListener('click', () => {
-        const userInput = {
-            title: inputTitle.value,
-            description: inputDesc.value
-        }
-        console.log(userInput)
-        localStorage.setItem("UserInput", JSON.stringify(userInput));
-        window.location.href = "inv.html";
-    });
-}
-
-//Retrieves the stored user input and displays it on the inventory page
-const storedInput = localStorage.getItem("UserInput");
-console.log(storedInput);
-if (storedInput){
-    console.log(inputUser);
-    const inputUser = JSON.parse(storedInput);
-
-    document.getElementById("inTit").textContent = inputUser.title;
-    document.getElementById("inDesc").textContent = inputUser.description;
-}
-});
-
-//Defines the button to add items to the inventory
-const addButton = document.getElementById("add-button");
-
-//When button is clicked, it creates a new item to personalize
 function addItem() {
-    addButton.addEventListener('click', () => {
-        document.getElementById("container").style.display = "block";
-    });
+    const itemName = document.getElementById("item-name");
+    const itemColor = document.getElementById("item-color");
+    const itemSize = document.getElementById("item-size");
+    const itemQuantity = document.getElementById("item-quantity");
+
+    item = {
+        name: itemName.value,
+        color: itemColor.value,
+        size: Number(itemSize.value),
+        quantity: Number(itemQuantity.value)
+    }
+
+    inventory.push(item);
+    addRow(item);
+}
+console.log(addItem())
+function sortList(sortByX) {
+    const length = inventory.length;
+    let swapped = false;
+    do {
+        swapped = false;
+        
+        for (let i = 1; i<= length - 1; i = i++) {
+            let previousItem = inventory[i - 1];
+            let currentItem = inventory[i];
+
+            if (sortByX === "name") {
+                if (previousItem.name > currentItem.name) {
+                    inventory[i - 1] = currentItem;
+                    inventory[i] = previousItem;
+                    swapped = true;
+                }
+            } else if (sortByX === "color") {
+                if (previousItem.color > currentItem.color) {
+                    inventory[i - 1] = currentItem;
+                    inventory[i] = previousItem;
+                    swapped = true;
+                }
+            } else if (sortByX === "size") {
+                if (previousItem.size > currentItem.size) {
+                    inventory[i - 1] = currentItem;
+                    inventory[i] = previousItem;
+                    swapped = true;
+                }
+            } else if (sortByX === "quantity") {
+                if (previousItem.quantity > currentItem.quantity) {
+                    inventory[i - 1] = currentItem;
+                    inventory[i] = previousItem;
+                    swapped = true;
+                }
+            }
+        }
+    } while (swapped === true);
 }
 
-//Checks which page the user is on and executes the corresponding function
-if(pageTitle1 === "Home Page"){
-    createInv();
-    storeUserInput(inputTitle, inputDesc);
-} else if (pageTitle2 === "Your Inventories") {
-    addItem();
+inventoryTable.innerHTML = "";
+for (let i = 0; i<= length - 1; i = i++) {
+    addRow(inventory[i]);
 }
