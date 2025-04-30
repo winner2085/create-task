@@ -1,5 +1,7 @@
+//Creates empty inventory array
 const inventory = [];
 
+//Creates item table for organizing items
 const inventoryTable = document.getElementById("user-inventory");
 
 function addRow(itemObject) {
@@ -10,8 +12,8 @@ function addRow(itemObject) {
     const quantityCell = newRow.insertCell();
     
     nameCell.textContent = itemObject.name;
-    colorCell.textContent = itemObject.quantity;
-    sizeCell.textContent = itemObject.name;
+    colorCell.textContent = itemObject.color;
+    sizeCell.textContent = itemObject.size;
     quantityCell.textContent = itemObject.quantity;
 }
 
@@ -31,7 +33,7 @@ function addItem() {
     inventory.push(item);
     addRow(item);
 }
-console.log(addItem())
+console.log(addItem());
 function sortList(sortByX) {
     const length = inventory.length;
     let swapped = false;
