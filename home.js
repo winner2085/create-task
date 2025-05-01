@@ -33,7 +33,7 @@ function addItem() {
     inventory.push(item);
     addRow(item);
 }
-console.log(addItem());
+
 function sortList(sortByX) {
     const length = inventory.length;
     let swapped = false;
